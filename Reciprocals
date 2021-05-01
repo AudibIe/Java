@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Reciprocals
+{
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+        System.out.println(Math.round( ((sumTo(n)) * 100.0)) / 100.0);
+    }
+
+    public static double sumTo(int n)
+    {
+        double sum;
+        if(n==0)
+        {
+            return 0.0;
+        }
+        else
+        {
+            sum = (1.0/n) + sumTo(n-1);
+        }
+        return sum;
+    }
+}
