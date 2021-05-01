@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class numbersWithCommas
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number down below: ");
+        int n = sc.nextInt();
+
+        System.out.println(commaNumbers(n));
+    }
+
+    public static String commaNumbers(int n)
+    {
+        StringBuilder s = new StringBuilder();
+        int a = 1;
+
+        while (n > 9)
+        {
+            s.append(n % 10);
+            
+            if(a == 3)
+            {
+              s.append(',');
+              a = 0;  
+            }
+           n /=10;
+           a++; 
+        }
+      s.append(n);
+      return s.reverse().toString(); 
+
+    }
+   
+}
