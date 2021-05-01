@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class CombineReverse
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        combine(n);
+
+    }
+
+    //Method to print a number and it's reverse
+    public static void combine(int n)
+    {
+        //Convert inputed value to a string
+        String number = String.valueOf(n);
+
+        //Store inputed value reversed
+        String reverse = "";
+
+        if(n >= 0)
+        {
+            for(int i = number.length() - 1; i > -1; i--)
+            {
+                reverse+= number.charAt(i);
+            }
+                System.out.print(number + reverse);
+        }
+        else
+        {
+            System.out.print("Not a valid entry!");
+        }
+    }
+}
