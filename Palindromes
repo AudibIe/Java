@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Palindromes
+{
+    public static void main(String [] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+
+        if(isPalindrome(word))
+        {
+            System.out.println(word + " is a Palindrome");
+        }
+        else
+        {
+            System.out.println(word + " is NOT a Palindrome");
+        }
+        
+    }
+
+
+    public static boolean isPalindrome(String word)
+    {
+        boolean palindrome = false;
+        String word2 = "";
+
+        for(int i = word.length() - 1; i >= 0; i--)
+        {
+            word2 = word2 + word.charAt(i);
+        }
+        if(word2.equalsIgnoreCase(word))
+        {
+            palindrome = true;
+        }
+        return palindrome;
+    }
+}
