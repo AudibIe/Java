@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Primes
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+
+        if(isPrime(a))
+        {
+            System.out.println(a + " is a Prime number");
+            
+        }
+        else
+        {
+            System.out.println(a + " is NOT a Prime number");
+        }
+    }
+
+    public static boolean isPrime(int a)
+    {
+        boolean prime = false;
+        if(a % 2 != 0 && a % 3 != 0)
+        {
+            prime = true;
+        }
+        return prime;
+    }
+}
