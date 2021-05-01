@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class FindSubStrings
+{
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+        int c = sc.nextInt();
+        System.out.println(checkForSub(a,b,c));
+    }
+
+    public static boolean checkForSub(String a, String b, int c)
+    {
+        if(c==0)
+        {
+            return true;
+        }
+        int d = a.indexOf(b);
+        if(d != -1)
+        {
+            return checkForSub(a.substring(d+1), b, c-1);
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+}
